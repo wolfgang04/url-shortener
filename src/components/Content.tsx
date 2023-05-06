@@ -6,7 +6,7 @@ const Content = () => {
 
 	return (
 		<div className="flex flex-col items-center justify-center">
-			<img src={working} className="translate-x-10" />
+			<img src={working} className="translate-x-10" alt="working-img" />
 
 			<div className="p-5">
 				<div className="flex flex-col items-center justify-center gap-5 text-center ">

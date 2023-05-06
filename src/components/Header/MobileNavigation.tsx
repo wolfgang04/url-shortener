@@ -16,6 +16,7 @@ const MobileNavigation = () => {
 				<Menu.Item>
 					{({ active }) => (
 						<a
+							href="#"
 							className={`${
 								active
 									? "bg-blue-500 text-white"
@@ -29,6 +30,7 @@ const MobileNavigation = () => {
 				<Menu.Item>
 					{({ active }) => (
 						<a
+							href="#"
 							className={`${
 								active
 									? "bg-blue-500 text-white"
@@ -42,6 +44,7 @@ const MobileNavigation = () => {
 				<Menu.Item>
 					{({ active }) => (
 						<a
+							href="#"
 							className={`${
 								active
 									? "bg-blue-500 text-white"
@@ -56,6 +59,7 @@ const MobileNavigation = () => {
 				<Menu.Item>
 					{({ active }) => (
 						<a
+							href="#"
 							className={`${
 								active
 									? "bg-blue-500 text-white"
@@ -69,6 +73,7 @@ const MobileNavigation = () => {
 				<Menu.Item>
 					{({ active }) => (
 						<a
+							href="#"
 							className={`${
 								active
 									? "bg-blue-500 text-white"
