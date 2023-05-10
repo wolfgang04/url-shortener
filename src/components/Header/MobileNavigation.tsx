@@ -10,8 +10,8 @@ const MobileNavigation = () => {
 			</Menu.Button>
 
 			<Menu.Items
-				className="fixed left-1/2 flex w-[85%] -translate-x-1/2 translate-y-[20px] transform flex-col items-center justify-center
-										gap-2 rounded-lg bg-dark-Violet p-6 text-lg text-white shadow-lg"
+				className="fixed left-1/2 flex w-[85%] -translate-x-1/2 translate-y-[20px] transform flex-col gap-2
+										rounded-lg bg-dark-Violet p-6 text-center text-lg text-white shadow-lg"
 			>
 				<Menu.Item>
 					{({ active }) => (
@@ -80,7 +80,9 @@ const MobileNavigation = () => {
 									: "text-gray-900"
 							} block rounded px-4 py-2 hover:bg-blue-500 `}
 						>
-							<Button roundness="rounded-full">Signup</Button>
+							<Button roundness="rounded-full w-full h-12">
+								Signup
+							</Button>
 						</a>
 					)}
 				</Menu.Item>
