@@ -7,7 +7,7 @@ type Props = {
 
 const Button: React.FC<Props> = (props) => {
 	return (
-		<button className={`bg-cyan px-8 py-3 text-white ${props.roundness}`}>
+		<button className={`bg-cyan text-white ${props.roundness}`}>
 			{props.children}
 		</button>
 	);
