@@ -1,8 +1,4 @@
 import FooterSection from "./FooterSection";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
 
 const Footer = () => {
 	return (
@@ -29,11 +25,44 @@ const Footer = () => {
 				<p>Contact</p>
 			</FooterSection>
 
-			<div className="flex items-center justify-center gap-5">
-				<FacebookIcon className="h-20 w-20 text-4xl text-white" />
-				<TwitterIcon className="text-4xl text-white" />
-				<PinterestIcon className="text-4xl text-white" />
-				<InstagramIcon className="text-4xl text-white" />
+			<div
+				className="flex items-center justify-center gap-5"
+				id="socials"
+			>
+				<a href="#">
+					<img
+						src={
+							process.env.PUBLIC_URL + "/images/icon-facebook.svg"
+						}
+						alt=""
+					/>
+				</a>
+				<a href="#">
+					<img
+						src={
+							process.env.PUBLIC_URL + "/images/icon-twitter.svg"
+						}
+						alt=""
+					/>
+				</a>
+				<a href="#">
+					<img
+						src={
+							process.env.PUBLIC_URL +
+							"/images/icon-pinterest.svg"
+						}
+						alt=""
+					/>
+				</a>
+				<a href="#">
+					<img
+						src={
+							process.env.PUBLIC_URL +
+							"/images/icon-instagram.svg"
+						}
+						alt=""
+					/>
+				</a>
 			</div>
 		</footer>
 	);
