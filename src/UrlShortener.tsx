@@ -18,7 +18,6 @@ interface Props {
 }
 
 const UrlShortener: React.FC<Props> = (props) => {
-	const [shortenedLinks, setShortenedLinks] = useState<Links[]>([]);
 	const [link, setLink] = useState("");
 	const [isEmpty, setIsEmpty] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);

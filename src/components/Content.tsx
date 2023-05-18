@@ -44,9 +44,31 @@ const Content = () => {
 				</div>
 			</div>
 
-			<div className="mt-32 bg-gray-bg">
-				<div className="-translate-y-1/2 p-5">
+			<div className="relative mt-32 bg-gray-bg">
+				<div className="absolute -translate-y-1/2 p-5">
 					<UrlShortener shorten={handleShorten} />
+				</div>
+
+				<div className="mt-20 flex flex-col gap-5 p-5">
+					{shortenedLinks.map((link, idx) => (
+						<div
+							key={idx}
+							className="flex flex-col gap-2 rounded-md bg-white p-5 text-base"
+						>
+							<div>
+								<p className="p-1">{link.origLink}</p>
+								<hr />
+
+								<p className="p-1 text-cyan">
+									{link.shortenedLink}
+								</p>
+							</div>
+
+							<button className="h-10 w-full rounded-md bg-cyan text-white">
+								Copy
+							</button>
+						</div>
+					))}
 				</div>
 
 				<Features />
