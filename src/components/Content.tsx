@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
-import UrlShortener from "../UrlShortener";
+import UrlShortener from "./UrlShortener";
 import Features from "./Features/Features";
 import Footer from "./Footer/Footer";
 
