@@ -20,34 +20,35 @@ interface Props {
 const UrlShortener: React.FC<Props> = (props) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [isEmpty, setIsEmpty] = useState(false);
-	const [link, setLink] = useState("");
 
 	const emptyTextStyle = "border-rose-500 border-4";
+	const apiUrl = "https://api.shrtco.de/v2/shorten?url=";
 
-	const handleShorten = () => {
-		setLink(() => inputRef.current!.value);
+	async function handleShorten() {
+		const link = inputRef.current?.value;
 
-		if (inputRef.current?.value === "") {
+		if (!link) {
 			setIsEmpty(true);
-		} else {
-			setIsEmpty(false);
-
-			try {
-				axios
-					.get<ApiResponse>(
-						`https://api.shrtco.de/v2/shorten?url=${link}`
-					)
-					.then((res) => {
-						props.shorten({
-							origLink: res.data.result.original_link,
-							shortenedLink: res.data.result.short_link,
-						});
-					});
-			} catch (err: any) {
-				console.log(err);
-			}
+			return;
 		}
-	};
+
+		setIsEmpty(false);
+
+		try {
+			const response = await axios.get<ApiResponse>(apiUrl + link);
+
+			const data = response.data;
+
+			props.shorten({
+				origLink: data.result.original_link,
+				shortenedLink: data.result.short_link,
+			});
+		} catch (error) {
+			console.error("Error occured.", error);
+		}
+
+		inputRef.current.value = "";
+	}
 
 	const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === "Enter") {
