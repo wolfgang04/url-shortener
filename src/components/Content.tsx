@@ -1,14 +1,31 @@
-import React from "react";
+import { useState } from "react";
 import Button from "./Button";
 import UrlShortener from "../UrlShortener";
 import Features from "./Features/Features";
 import Footer from "./Footer/Footer";
 
+interface Links {
+	origLink: string;
+	shortenedLink: string;
+}
+
 const Content = () => {
+	const [shortenedLinks, setShortenedLinks] = useState<Links[]>([]);
 	const working = process.env.PUBLIC_URL + "/images/illustration-working.svg";
 
+	const handleShorten = (ApiData: Links) => {
+		setShortenedLinks((prevLinks) => [
+			...prevLinks,
+			{
+				origLink: ApiData.origLink,
+				shortenedLink: ApiData.shortenedLink,
+			},
+		]);
+		console.log(shortenedLinks);
+	};
+
 	return (
-		<div className="flex flex-col items-center justify-center">
+		<div className="flex flex-col items-center justify-center text-base">
 			<img src={working} className="translate-x-10" alt="working-img" />
 
 			<div className="p-5">
@@ -29,7 +46,7 @@ const Content = () => {
 
 			<div className="mt-32 bg-gray-bg">
 				<div className="-translate-y-1/2 p-5">
-					<UrlShortener />
+					<UrlShortener shorten={handleShorten} />
 				</div>
 
 				<Features />
