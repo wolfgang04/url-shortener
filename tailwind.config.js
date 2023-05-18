@@ -16,10 +16,6 @@ module.exports = {
 				"very-Dark-Violet": "hsl(260, 8%,14%)",
 				"gray-bg": "#F0F1F6",
 			},
-			backgroundImage: {
-				// "shorten": url,
-				// "shorten-mobile": "url('/images/bg-shorten-mobile.svg')",
-			},
 		},
 	},
 	plugins: [],
